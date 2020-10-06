@@ -1,0 +1,44 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="poczcruddemo.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Detail Page" showNavButton="true" navButtonPress="_onNavBack">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Add Personal Info" labelSpanXL="3"
+							labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+							columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="Personal ID" required="true"/>
+								<Input id="txtPId" value="0" type="Number" maxLength="3"/>
+								<Label text="Name" required="true"/>
+								<Input id="txtName" type="Text" maxLength="30"/>
+								<Label text="Mobile No" required="true"/>
+								<Input id="txtMobileNo" type="Number" maxLength="10"/>
+								<Label text="City" required="true"/>
+								<Input id="txtCity" type="Text" maxLength="10"/>
+								<Label text="State" required="true"/>
+								<Select id="txtState" forceSelection="false" selectedKey="0">
+									<core:Item key="0" text="Select"/>
+									<core:Item key="GUJARAT" text="Gujarat"/>
+									<core:Item key="MAHARASTRA" text="Maharastra"/>
+									<core:Item key="MADHYA PREDESH" text="Madhya Pradesh"/>
+								</Select>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<OverflowToolbar>
+						<content>
+							<ToolbarSpacer/>
+							<Button id="btnSave" text="Save" visible="true" icon="sap-icon://save" press="_onSave" type="Emphasized" tooltip="Save"/>
+							<Button id="btnUpdate" text="Update" visible="false" icon="sap-icon://save" press="_onUpdate" type="Emphasized" tooltip="Update"/>
+							<Button id="btnReset" text="Reset" icon="sap-icon://decline" press="_onReset" type="Reject" tooltip="Reset"/>
+						</content>
+					</OverflowToolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

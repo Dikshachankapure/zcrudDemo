@@ -1,0 +1,60 @@
+<mvc:View controllerName="poczcruddemo.controller.Master" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page title="Master Page">
+				<content>
+					<Table id="tblPersonaltbl" inset="false" class="sapUiResponsiveMargin" growing="true" growingScrollToLoad="true" width="auto"
+						growingThreshold="10" items="{path:'/PersonalInfoSet'}" noDataText="No Data Found">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="List of Personal Information" level="H2"/>
+									<ToolbarSpacer/>
+									<!--<SearchField id="txtSearch" search="onSearch" width="50%"/>-->
+									<Button id="btnAdd" icon="sap-icon://add" press="onAdd" text="Add" type="Accept" tooltip="Add"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column demandPopin="true">
+								<Text text="PID"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Name"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="Mobile No"/>
+							</Column>
+							<Column demandPopin="true" minScreenWidth="Tablet">
+								<Text text="City"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text="State"/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text=""/>
+							</Column>
+							<Column demandPopin="true">
+								<Text text=""/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem vAlign="Middle" type="Navigation">
+								<cells>
+									<Text text="{Pid}"/>
+									<Text text="{Pname}"/>
+									<Text text="{Pmobile}"/>
+									<Text text="{Pcity}"/>
+									<Text text="{Pstate}"/>
+									<Button id="btnEdit" icon="sap-icon://edit" press="_onEdit" type="Accept" tooltip="Edit"/>
+									<Button id="btnDelete" icon="sap-icon://delete" press="_onDelete" type="Reject" tooltip="Delete"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
